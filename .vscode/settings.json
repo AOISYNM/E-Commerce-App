@@ -1,0 +1,10 @@
+{
+    "python-envs.defaultEnvManager": "ms-python.python:venv",
+    "python.defaultInterpreterPath": "D:\\Projects_Learning\\DJ_RCT_PGS\\ECOMAPP\\backend\\.venv\\Scripts\\python.exe",
+    "python.analysis.extraPaths": [
+        "D:\\Projects_Learning\\DJ_RCT_PGS\\ECOMAPP\\backend\\.venv\\Lib\\site-packages"
+    ],
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingImports": "none"
+    }
+}
