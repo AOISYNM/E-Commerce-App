@@ -1,13 +1,12 @@
-
-
+import ProductsList from "./pages/ProductsList"
+import Start from "./components/start"
 
 
 function App() {
   
 
   return (
-    <h1>Hello </h1>
-    
+    <ProductsList />
   )
 }
 
