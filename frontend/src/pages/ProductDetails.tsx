@@ -1,9 +1,16 @@
 import { useEffect , useState } from "react";
 import { useParams , useNavigate } from "react-router-dom";
 
-interface Product {
+interface Category {
     id: number;
-    category: string;
+    name: string;
+    slug: string;
+}
+
+interface Product {
+    
+    id: number;
+    category: Category;
     name: string;
     description: string;
     price: string;
@@ -13,7 +20,7 @@ interface Product {
 
 function ProductDetails() {
     const apiUrl = import.meta.env.VITE_DJANGO_API_URL;
-    const BASE_URL = import.meta.env.VITE_BASE_URL;
+    const BASE_URL = import.meta.env.VITE_DJANGO_BASE_URL;
     const {id} = useParams();
     const navigate = useNavigate();
     const [product , setProduct] = useState<Product | null>(null);
@@ -61,7 +68,7 @@ function ProductDetails() {
 
                 {product.image ? (
                     <img
-                        src={`${BASE_URL}${product.image}`}
+                        src={`  ${product.image}`}
                         alt={product.name}
                         className="w-full h-96 object-cover rounded-lg shadow-md mb-6"
                     />
@@ -72,7 +79,7 @@ function ProductDetails() {
                 )}
 
                 <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
-                <p className="text-gray-500 text-sm mb-4">Category: {product.category}</p>
+                <p className="text-gray-500 text-sm mb-4">Category: {product.category.name}</p>
                 <p className="text-gray-600 mb-6">{product.description}</p>
                 <p className="text-2xl font-bold text-green-600">${product.price}</p>
             </div>
