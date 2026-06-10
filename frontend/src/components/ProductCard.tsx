@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 interface Product {
     id: number;
     category: string;
@@ -13,9 +15,12 @@ interface ProductCardProps {
 }
 
 function ProductCard({ product }: ProductCardProps) { 
+    const navigate = useNavigate();
     const BASE_URL = import.meta.env.VITE_DJANGO_BASE_URL;
     return (
-        <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-300">
+        <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-300"
+        onClick={()=>navigate(`products/${product.id}`)}
+        >
 
             {product.image ? (
                 <img 
